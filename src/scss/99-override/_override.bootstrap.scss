@@ -1,0 +1,37 @@
+/*! purgecss start ignore */
+.container {
+  max-width: 97rem !important;
+  margin: 0 auto;
+  padding: 0 20px;
+  @include media-breakpoint-down(md) {
+    padding: 0 16px;
+  }
+}
+.container-xs {
+  max-width: 49.4rem;
+  margin: 0 auto;
+}
+.text-primary {
+  color: var(--color-primary) !important;
+}
+.text-gray-800 {
+  color: var(--color-gray-800) !important;
+}
+.bg-white {
+  background-color: var(--color-white) !important;
+}
+
+.hover-outline,
+.hover-outline a {
+  text-decoration-color: transparent;
+  &:hover {
+    text-decoration-color: inherit;
+  }
+}
+.border-gray-200 {
+  border-color: var(--color-gray-200) !important;
+}
+.border-top-1 {
+  border-top: 1px solid var(--color-gray-200);
+}
+/*! purgecss end ignore */

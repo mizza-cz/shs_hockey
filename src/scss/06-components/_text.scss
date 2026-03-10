@@ -1,0 +1,101 @@
+.h1,
+.o-content h1 {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+  @include media-breakpoint-down(lg) {
+    font-size: 42px;
+    line-height: 50px;
+  }
+}
+.h2,
+.o-content h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: -0.02em;
+  @include media-breakpoint-down(lg) {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+.h3,
+.o-content h3 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  @include media-breakpoint-down(lg) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+.h4,
+.o-content h4 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+}
+.h5,
+.o-content h5 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+.h6,
+.o-content h6 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+}
+/////
+///
+///
+///
+.text-xl {
+  font-size: 20px;
+  line-height: 30px;
+  @include media-breakpoint-down(lg) {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+.text-md {
+  font-size: 16px;
+  line-height: 24px;
+}
+.text-sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+.d {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+.c {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.k {
+  font-family: Satoshi;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+.s {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+}
+.e {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}

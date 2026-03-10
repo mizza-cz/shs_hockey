@@ -1,0 +1,110 @@
+.o-content {
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+  > :first-child {
+    margin-top: 0;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  h4 {
+    margin-bottom: 20px;
+  }
+  h5 {
+    margin-bottom: 16px;
+    margin-top: 32px;
+  }
+  h4,
+  h5 {
+    color: var(--color-gray-900);
+  }
+  blockquote {
+    margin: 48px 0;
+    @include media-breakpoint-down(lg) {
+      margin: 32px 0;
+    }
+  }
+  img {
+    margin: 48px auto;
+    height: auto;
+    object-fit: cover;
+    @include media-breakpoint-down(lg) {
+      margin: 32px auto;
+    }
+  }
+  p img {
+    margin: 0 auto;
+  }
+  ul {
+    margin: 20px 0;
+    > li {
+      position: relative;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+      padding-left: 14px;
+      display: flex;
+      align-items: center;
+      letter-spacing: -0.01em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 16px;
+      }
+      &::before {
+        content: "";
+        background-color: var(--color-accent);
+        position: absolute;
+        left: 0;
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+  ol {
+    margin-bottom: 24px;
+    margin: 20px 0;
+    counter-reset: item;
+    > li {
+      counter-increment: item;
+      position: relative;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 16px;
+      }
+      &::before {
+        content: counter(item) ".";
+        font-size: 20px;
+        margin-right: 8px;
+      }
+    }
+  }
+  p + p {
+    margin-top: 24px;
+  }
+  q {
+    display: block;
+    padding: 32px;
+    background: var(--color-gray-50);
+    border-radius: 1rem;
+    margin: 48px 0;
+
+    @include media-breakpoint-down(lg) {
+      padding: 24px;
+      margin: 32px 0;
+    }
+    &::before,
+    &::after {
+      display: none;
+    }
+    h5 {
+      margin-top: 0;
+    }
+  }
+}
