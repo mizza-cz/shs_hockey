@@ -1,0 +1,22 @@
+.coachMain__img {
+  width: 100%;
+  aspect-ratio: 384/360;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.coachItem {
+  &__img {
+    width: 100%;
+    aspect-ratio: 384/264;
+    margin-bottom: 1rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

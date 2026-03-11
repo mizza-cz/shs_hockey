@@ -1,0 +1,29 @@
+.footer-projects {
+  padding: 16px 0;
+  @include media-breakpoint-down(lg) {
+    padding: 0;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+  }
+  &__item {
+    padding: 16px;
+    @include media-breakpoint-down(sm) {
+      max-width: 50%;
+      flex: 0 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 16px;
+    }
+    img {
+      width: 156px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}

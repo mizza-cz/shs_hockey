@@ -1,0 +1,80 @@
+<section class="coaches-section pt-xl-16 pt-12">
+  <div class="container">
+    <h1 class="h1 text-center mb-lg-8 mb-6">Trenéři</h1>
+    <div class="row g-lg-8 g-6 mb-xxl-30 mb-lg-20 mb-15">
+      <div class="col-xl-4 col-lg-5">
+        <div class="coachMain__img">
+          <img src="images/content/coach-1.png" alt="coach" />
+        </div>
+      </div>
+
+      <div class="col-xl-8 col-lg-7">
+        <div class="d-flex flex-column gap-4">
+          <div class="badge-lg bg-primary">Hlavní trenér</div>
+          <h2 class="h5">Mgr. Luboš Voříšek</h2>
+          <p class="text-xl">
+            Jako hráč začínal v rodné Příbrami, ale již v mladém věku se vydal
+            do Prahy a prošel celou mládeží týmu HC Sparta Praha. V dorostu
+            vybojoval se svým týmem bronzovou medaili a o pár let později
+            skončil s juniorským týmem na druhém místě. Poté začal působit v 1.
+            a ve 2. lize v ČR. Momentálně je stále aktivním ligovým hráčem v
+            týmu BK Havlíčkův Brod.
+          </p>
+          <p class="text-sm">
+            Během hokeje vystudoval Fakultu tělesné výchovy a sportu Univerzity
+            Karlovy se specializací na lední hokej. Díky tomu je držitelem
+            nejvyšší trenérské licence „A“. Trénovat začal již v juniorském věku
+            a od té doby získal spoustu zkušeností z různých klubů. Během
+            posledních deseti let se věnuje tréninku hokejových dovedností.
+          </p>
+          <div class="text-sm">
+            Zaměřuje se na komplexní rozvoj hokejových dovedností (bruslení,
+            vedení puku, střelba) a jejich transfer do samotné hry. Specializuje
+            se také na výběr talentovaných hráčů jednotlivých ročníků. S těmi
+            pak pracuje nad rámec klubové aktivity a účastní se kvalitních
+            turnajů v Česku i v zahraničí.
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="h3 text-center mb-lg-8 mb-6">Trenéři</h3>
+    <div class="row g-lg-8 g-6 mb-xxl-30 mb-lg-20 mb-15">
+      {% for i in 1..6 %}
+      <div class="col-lg-4 col-sm-6">
+        <div class="coachItem">
+          <div class="coachItem__img">
+            <img src="images/content/coach-2.png" loading="lazy" alt="coach" />
+          </div>
+          <div class="h5">Jiří Benák</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <h3 class="h3 text-center mb-lg-8 mb-6">Další pracovníci</h3>
+    <div class="row g-lg-8 g-6 mb-xxl-30 mb-lg-20 mb-15">
+      {% for i in 1..3 %}
+      <div class="col-lg-4 col-sm-6">
+        <div class="coachItem">
+          <div class="coachItem__img">
+            <img src="images/content/coach-3.png" loading="lazy" alt="coach" />
+          </div>
+          <div class="h5">Filip Pártl</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <h3 class="h3 text-center mb-lg-8 mb-6">Trenéři brankářů</h3>
+    <div class="row g-lg-8 g-6 mb-xxl-30 mb-lg-20 mb-15">
+      {% for i in 1..3 %}
+      <div class="col-lg-4 col-sm-6">
+        <div class="coachItem">
+          <div class="coachItem__img">
+            <img src="images/content/coach-3.png" loading="lazy" alt="coach" />
+          </div>
+          <div class="h5">Filip Pártl</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

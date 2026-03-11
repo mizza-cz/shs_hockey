@@ -1,6 +1,6 @@
 /*! purgecss start ignore */
 .container {
-  max-width: 97rem !important;
+  max-width: 83.6rem !important;
   margin: 0 auto;
   padding: 0 20px;
   @include media-breakpoint-down(md) {
@@ -8,8 +8,11 @@
   }
 }
 .container-xs {
-  max-width: 49.4rem;
+  max-width: 48rem;
   margin: 0 auto;
+}
+.text-brand-25 {
+  color: var(--color-brand-25);
 }
 .text-primary {
   color: var(--color-primary) !important;
@@ -19,6 +22,9 @@
 }
 .bg-white {
   background-color: var(--color-white) !important;
+}
+.bg-primary {
+  background: var(--color-primary) !important;
 }
 
 .hover-outline,
