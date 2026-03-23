@@ -1,0 +1,27 @@
+.hero-section {
+  margin-bottom: 60px;
+  &__inner {
+    position: relative;
+    padding-top: 60px;
+    @include media-breakpoint-down(lg) {
+      padding-top: 48px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 1rem;
+      right: clamp(-5.5rem, -5vw, -1.5rem);
+      width: clamp(520px, 65vw, 64.25rem);
+      aspect-ratio: 966 / 535;
+      background: url("../images/content/hero-bg.png") no-repeat right center /
+        contain;
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+  .postCard::before {
+    backdrop-filter: grayscale(100%);
+    -webkit-backdrop-filter: grayscale(100%);
+  }
+}

@@ -3,7 +3,8 @@
 {% set title = "01.0_homepage" %}
 
 {% block main %}
-
-Hello, World!
+{% include "@components/hero-section/hero-section.twig" %}
+{% include "@components/map-section/map-section.twig" %}
+{% include "@components/footer-projects/footer-projects.twig" %}
 
 {% endblock %}

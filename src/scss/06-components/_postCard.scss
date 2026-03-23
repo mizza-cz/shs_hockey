@@ -4,6 +4,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   aspect-ratio: 384/333;
   &:hover {
     .h5 {
