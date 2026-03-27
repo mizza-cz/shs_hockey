@@ -386,12 +386,20 @@
 			</div>
 			<div class="mb-xxl-30 mb-lg-20 mb-15">
 				<div class="container">
-					<a class="videoFrame" href="#">
+					<button class="videoFrame" data-bs-toggle="modal" data-bs-target="#modalVideo">
 						<img class="object-fit-cover object-position-top" src="images/content/videoFrame.jpg" height="100%" width="100%" loading="lazy" alt="video" />
 						<div class="button-primary">
 							<img src="images/ico/play.svg" loading="lazy" alt="play" /> Přehrát video
 						</div>
-					</a>
+					</button>
+
+					<div class="modal fade" id="modalVideo" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered videoModal">
+							<div class="modal-content o-content">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/oxSozfAd0ik?si=jEFxwGsTG7gIUxzl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 
