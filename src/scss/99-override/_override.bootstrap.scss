@@ -11,6 +11,9 @@
   max-width: 48rem;
   margin: 0 auto;
 }
+.text-black {
+  color: var(--color-black) !important;
+}
 .text-brand-25 {
   color: var(--color-brand-25);
 }
@@ -32,6 +35,9 @@
 .text-gray-800 {
   color: var(--color-gray-800) !important;
 }
+.text-gray-900 {
+  color: var(--color-gray-900) !important;
+}
 .bg-white {
   background-color: var(--color-white) !important;
 }
@@ -40,6 +46,9 @@
 }
 .bg-gray-500 {
   background: var(--color-gray-500) !important;
+}
+.bg-gray-700 {
+  background: var(--color-gray-700) !important;
 }
 .hover-outline,
 .hover-outline a {
@@ -53,5 +62,8 @@
 }
 .border-top-1 {
   border-top: 1px solid var(--color-gray-200);
+}
+.object-position-top {
+  object-position: top;
 }
 /*! purgecss end ignore */

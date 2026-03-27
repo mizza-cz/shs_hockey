@@ -1,0 +1,159 @@
+.modal {
+  --bs-modal-bg: var(--color-white);
+  --bs-modal-box-shadow: 0px 3px 3px -1.5px #0a0d120a,
+    0px 8px 8px -4px #0a0d1208, 0px 20px 24px -4px #0a0d1214;
+
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#0a0d12, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  overflow: auto;
+  &-header {
+    position: relative;
+    padding: 0 0 28px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-emphasis: accent;
+  }
+  &-content {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  &-footer {
+    padding: 24px;
+  }
+  &-body {
+    padding: 0;
+  }
+  .btn-close {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    top: 16px;
+    right: 16px;
+    svg {
+      width: 24px;
+      height: 24px;
+      path {
+        transition: all 0.25s;
+      }
+    }
+    &:hover svg path {
+      stroke: var(--color-gray-900);
+    }
+  }
+}
+
+.orderModal {
+  .modal-dialog {
+  }
+  &-header__icon {
+    position: relative;
+    background: var(--color-brand-100);
+    border: 8px solid var(--color-brand-50);
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: auto;
+      display: block;
+      width: clamp(280px, 40vw, 480px);
+      height: clamp(280px, 40vw, 480px);
+
+      background: url("../images/ico/sent-order-bg.svg") center / cover
+        no-repeat;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+.modalOrderItem {
+  padding: 0 24px;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  &__remove {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover svg path {
+      stroke: var(--color-brand-700);
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+      path {
+        transition: all 0.25s;
+      }
+    }
+  }
+}
+.modalOrderItem + .modalOrderItem {
+  padding-top: 12px;
+  border-top: 1px solid var(--color-gray-200);
+  margin-top: 20px;
+}
+.add-order-btn {
+  margin-top: 20px;
+  padding: 24px 24px 0 24px;
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-brand-700);
+  background: transparent;
+
+  transition: all 0.25s;
+  cursor: pointer;
+  svg {
+    width: 20px;
+    height: 20px;
+    path {
+      transition: all 0.25s;
+    }
+  }
+  &:hover {
+    color: var(--color-gray-900);
+    svg path {
+      stroke: var(--color-gray-900);
+    }
+  }
+}

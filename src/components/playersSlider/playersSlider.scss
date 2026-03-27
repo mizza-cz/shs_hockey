@@ -1,0 +1,72 @@
+.playersSlider {
+  position: relative;
+  overflow: visible;
+  .swiper-slide {
+    width: 340px !important;
+    display: flex !important;
+    height: auto !important;
+    @include media-breakpoint-down(sm) {
+      width: 100% !important;
+    }
+  }
+  &-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 314/216;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    .badge-sm {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+    }
+  }
+  &__btn {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-primary);
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.25s;
+    &:hover {
+      background: var(--color-brand-700);
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      path {
+        stroke: var(--color-white);
+      }
+    }
+  }
+  &__btn.prev {
+    left: -24px;
+    @include media-breakpoint-down(xl) {
+      left: -10px;
+    }
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+  &__btn.next {
+    right: -10px;
+  }
+  &__btn.swiper-button-disabled {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

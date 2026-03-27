@@ -1,0 +1,500 @@
+<div
+  class="modal fade"
+  id="modalOrder"
+  tabindex="-1"
+  aria-labelledby="orderModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered orderModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="orderModal-header__icon">
+          <img
+            class="object-fit-contain"
+            src="images/ico/order-cart.svg"
+            width="24"
+            height="24"
+            alt="cart"
+          />
+        </div>
+        <h5 class="fw-bold text-md text-gray-900 mb-1">Objednávka</h5>
+        <p class="text-gray-600 text-sm">SHS 2013 Premier Select League</p>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal">
+          {% include "@images/x-close.svg" %}
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="orderForm">
+          <ul class="ordersList" id="ordersList">
+            <li class="modalOrderItem" data-order-index="1">
+              <div class="modalOrderItem__header">
+                <h3 class="modalOrderItem__title">#1 objednávka</h3>
+                <button
+                  type="button"
+                  class="modalOrderItem__remove"
+                  aria-label="Odstranit poslední objednávku"
+                >
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M3 6H21"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M8 6V4C8 3.44772 8.44772 3 9 3H15C15.5523 3 16 3.44772 16 4V6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M19 6L18.133 18.142C18.058 19.192 17.184 20 16.131 20H7.869C6.816 20 5.942 19.192 5.867 18.142L5 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M10 11V16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M14 11V16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label"
+                    >Jméno a příjmení <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control order-input"
+                    name="fullName"
+                    placeholder="Vyplňte"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label"
+                    >Klub <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control order-input"
+                    name="club"
+                    placeholder="Vyplňte"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label"
+                    >Datum narození <span class="required">*</span></label
+                  >
+                  <input
+                    type="date"
+                    class="form-control order-input"
+                    name="birthDate"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label"
+                    >Pozice <span class="required">*</span></label
+                  >
+                  <select
+                    class="js-select order-input"
+                    name="position"
+                    required
+                  >
+                    <option value="">Vyberte</option>
+                    <option value="Útočník" selected>Útočník</option>
+                    <option value="Obránce">Obránce</option>
+                    <option value="Brankář">Brankář</option>
+                  </select>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <button type="button" class="add-order-btn" id="addOrderBtn">
+            {% include "@images/plus.svg" %} přidat další objednávku
+          </button>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <div class="d-flex gap-3 w-100">
+          <button
+            type="button"
+            class="button-secondary button-lg"
+            data-bs-dismiss="modal"
+          >
+            Zrušit
+          </button>
+
+          <button
+            type="submit"
+            form="orderForm"
+            class="button-primary button-lg flex-fill"
+            id="submitOrdersBtn"
+          >
+            {% include "@images/cart.svg" %} Přidat do košíku
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modalOrder = document.getElementById("modalOrder");
+    const ordersList = document.getElementById("ordersList");
+    const addOrderBtn = document.getElementById("addOrderBtn");
+    const orderForm = document.getElementById("orderForm");
+
+    if (!modalOrder || !ordersList || !addOrderBtn || !orderForm) {
+      return;
+    }
+
+    function getOrderTemplate(index, data = {}) {
+      return `
+        <li class="modalOrderItem" data-order-index="${index}">
+          <div class="modalOrderItem__header">
+            <h3 class="modalOrderItem__title">#${index} objednávka</h3>
+            <button
+              type="button"
+              class="modalOrderItem__remove"
+              aria-label="Odstranit poslední objednávku"
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M8 6V4C8 3.44772 8.44772 3 9 3H15C15.5523 3 16 3.44772 16 4V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M19 6L18.133 18.142C18.058 19.192 17.184 20 16.131 20H7.869C6.816 20 5.942 19.192 5.867 18.142L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M10 11V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M14 11V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label class="form-label">Jméno a příjmení <span class="required">*</span></label>
+              <input
+                type="text"
+                class="form-control order-input"
+                name="fullName"
+                placeholder="Vyplňte"
+                value="${data.fullName || ""}"
+                required
+              >
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label">Klub <span class="required">*</span></label>
+              <input
+                type="text"
+                class="form-control order-input"
+                name="club"
+                placeholder="Vyplňte"
+                value="${data.club || ""}"
+                required
+              >
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label">Datum narození <span class="required">*</span></label>
+              <input
+                type="date"
+                class="form-control order-input"
+                name="birthDate"
+                value="${data.birthDate || ""}"
+                required
+              >
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label">Pozice <span class="required">*</span></label>
+              <select class="js-select order-input" name="position" required>
+                <option value="">Vyberte</option>
+                <option value="Útočník" ${
+                  data.position === "Útočník" ? "selected" : ""
+                }>Útočník</option>
+                <option value="Obránce" ${
+                  data.position === "Obránce" ? "selected" : ""
+                }>Obránce</option>
+                <option value="Brankář" ${
+                  data.position === "Brankář" ? "selected" : ""
+                }>Brankář</option>
+              </select>
+            </div>
+          </div>
+        </li>
+      `;
+    }
+
+    function getOrderItems() {
+      return Array.from(ordersList.querySelectorAll(".modalOrderItem"));
+    }
+
+    function initSelects(context = document, forceReinit = false) {
+      if (
+        typeof window.jQuery === "undefined" ||
+        !window.jQuery.fn ||
+        !window.jQuery.fn.select2
+      ) {
+        return;
+      }
+
+      const $context = window.jQuery(context);
+
+      $context.find(".js-select").each(function () {
+        const $select = window.jQuery(this);
+
+        if ($select.hasClass("select2-hidden-accessible")) {
+          if (!forceReinit) {
+            return;
+          }
+          $select.select2("destroy");
+        }
+
+        $select.select2({
+          width: "100%",
+          minimumResultsForSearch: Infinity,
+          dropdownParent: window.jQuery(modalOrder),
+        });
+      });
+    }
+
+    function destroySelect(selectElement) {
+      if (
+        typeof window.jQuery !== "undefined" &&
+        window.jQuery.fn &&
+        window.jQuery.fn.select2
+      ) {
+        const $select = window.jQuery(selectElement);
+
+        if ($select.hasClass("select2-hidden-accessible")) {
+          $select.select2("destroy");
+        }
+      }
+    }
+
+    function updateOrderIndexes() {
+      const items = getOrderItems();
+
+      items.forEach((item, index) => {
+        item.dataset.orderIndex = index + 1;
+        item.querySelector(".modalOrderItem__title").textContent = `#${
+          index + 1
+        } objednávka`;
+
+        const removeBtn = item.querySelector(".modalOrderItem__remove");
+
+        if (items.length === 1) {
+          removeBtn.style.display = "none";
+        } else {
+          removeBtn.style.display =
+            index === items.length - 1 ? "inline-flex" : "none";
+        }
+      });
+    }
+
+    function addOrder(data = {}) {
+      const nextIndex = getOrderItems().length + 1;
+
+      ordersList.insertAdjacentHTML(
+        "beforeend",
+        getOrderTemplate(nextIndex, data)
+      );
+
+      const newItem = ordersList.lastElementChild;
+
+      if (modalOrder.classList.contains("show")) {
+        initSelects(newItem, true);
+      }
+
+      updateOrderIndexes();
+    }
+
+    function removeLastOrder() {
+      const items = getOrderItems();
+
+      if (items.length <= 1) {
+        return;
+      }
+
+      const lastItem = items[items.length - 1];
+
+      lastItem.querySelectorAll(".js-select").forEach((select) => {
+        destroySelect(select);
+      });
+
+      lastItem.remove();
+      updateOrderIndexes();
+    }
+
+    function validateOrders() {
+      const items = getOrderItems();
+      let isValid = true;
+
+      items.forEach((item) => {
+        const fields = item.querySelectorAll(".order-input");
+
+        fields.forEach((field) => {
+          const value = field.value ? field.value.trim() : "";
+
+          if (!value) {
+            field.classList.add("is-invalid");
+
+            if (field.classList.contains("js-select")) {
+              const select2Container = field.nextElementSibling;
+              if (
+                select2Container &&
+                select2Container.classList.contains("select2")
+              ) {
+                select2Container.classList.add("is-invalid");
+              }
+            }
+
+            isValid = false;
+          } else {
+            field.classList.remove("is-invalid");
+
+            if (field.classList.contains("js-select")) {
+              const select2Container = field.nextElementSibling;
+              if (
+                select2Container &&
+                select2Container.classList.contains("select2")
+              ) {
+                select2Container.classList.remove("is-invalid");
+              }
+            }
+          }
+        });
+      });
+
+      return isValid;
+    }
+
+    function collectOrdersData() {
+      return getOrderItems().map((item, index) => {
+        return {
+          orderNumber: index + 1,
+          fullName: item.querySelector('[name="fullName"]').value.trim(),
+          club: item.querySelector('[name="club"]').value.trim(),
+          birthDate: item.querySelector('[name="birthDate"]').value.trim(),
+          position: item.querySelector('[name="position"]').value.trim(),
+        };
+      });
+    }
+
+    addOrderBtn.addEventListener("click", function () {
+      addOrder({
+        fullName: "",
+        club: "",
+        birthDate: "",
+        position: "",
+      });
+    });
+
+    ordersList.addEventListener("click", function (event) {
+      const removeBtn = event.target.closest(".modalOrderItem__remove");
+
+      if (!removeBtn) {
+        return;
+      }
+
+      removeLastOrder();
+    });
+
+    ordersList.addEventListener("input", function (event) {
+      if (event.target.classList.contains("order-input")) {
+        const value = event.target.value ? event.target.value.trim() : "";
+
+        if (value) {
+          event.target.classList.remove("is-invalid");
+        }
+      }
+    });
+
+    ordersList.addEventListener("change", function (event) {
+      if (event.target.classList.contains("js-select")) {
+        if (event.target.value.trim()) {
+          event.target.classList.remove("is-invalid");
+
+          const select2Container = event.target.nextElementSibling;
+
+          if (
+            select2Container &&
+            select2Container.classList.contains("select2")
+          ) {
+            select2Container.classList.remove("is-invalid");
+          }
+        }
+      }
+    });
+
+    orderForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const isValid = validateOrders();
+
+      if (!isValid) {
+        return;
+      }
+
+      const orders = collectOrdersData();
+
+      console.log("orders payload:", orders);
+
+      try {
+        const response = await fetch("/cart/add-orders", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            productId: 123,
+            orders: orders,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Nepodařilo se odeslat objednávku");
+        }
+
+        const result = await response.json();
+        console.log("server result:", result);
+      } catch (error) {
+        //   console.error(error);
+        //   alert("Nepodařilo se přidat do košíku");
+      }
+    });
+
+    updateOrderIndexes();
+
+    modalOrder.addEventListener("shown.bs.modal", function () {
+      initSelects(modalOrder, true);
+    });
+
+    modalOrder.addEventListener("hidden.bs.modal", function () {
+      modalOrder.querySelectorAll(".js-select").forEach((select) => {
+        destroySelect(select);
+      });
+    });
+  });
+</script>

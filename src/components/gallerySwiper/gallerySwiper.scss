@@ -1,0 +1,19 @@
+.gallerySwiper {
+  position: relative;
+  overflow: visible;
+  .swiper-slide {
+    width: 292px !important;
+    display: flex !important;
+    height: auto !important;
+  }
+  &__item {
+    display: block;
+    width: 100%;
+    aspect-ratio: 285/280;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

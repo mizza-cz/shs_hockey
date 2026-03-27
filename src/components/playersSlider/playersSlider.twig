@@ -1,0 +1,37 @@
+<div class="swiper playersSlider">
+  <button class="playersSlider__btn prev" aria-label="Previous">
+    {% include "@images/chevron-right.svg" %}
+  </button>
+  <ul role="list" class="swiper-wrapper infinite-scroll-swiper">
+    {% for i in 1..2 %}
+    <li class="swiper-slide">
+      <a href="#" class="playersSlider-item">
+        <img src="images/content/player-1.png" loading="lazy" alt="player" />
+        <div class="badge-sm bg-gray-700 text-md">David Pastrňák</div>
+      </a>
+    </li>
+    <li class="swiper-slide">
+      <a href="#" class="playersSlider-item">
+        <img src="images/content/player-2.png" loading="lazy" alt="player" />
+        <div class="badge-sm bg-gray-700 text-md">Pavel Zacha</div>
+      </a>
+    </li>
+    <li class="swiper-slide">
+      <a href="#" class="playersSlider-item">
+        <img src="images/content/player-3.png" loading="lazy" alt="player" />
+        <div class="badge-sm bg-gray-700 text-md">Radko Gudas</div>
+      </a>
+    </li>
+    <li class="swiper-slide">
+      <a href="#" class="playersSlider-item">
+        <img src="images/content/player-4.png" loading="lazy" alt="player" />
+        <div class="badge-sm bg-gray-700 text-md">Dominik Kubalík</div>
+      </a>
+    </li>
+
+    {% endfor %}
+  </ul>
+  <button class="playersSlider__btn next" aria-label="Previous">
+    {% include "@images/chevron-right.svg" %}
+  </button>
+</div>

@@ -1,0 +1,30 @@
+.sentOrder {
+  &-icon {
+    margin-bottom: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-success-100);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: auto;
+      display: block;
+      width: clamp(280px, 40vw, 480px);
+      height: clamp(280px, 40vw, 480px);
+
+      background: url("../images/ico/sent-order-bg.svg") center / cover
+        no-repeat;
+    }
+    img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+  }
+}

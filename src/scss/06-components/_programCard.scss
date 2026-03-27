@@ -1,0 +1,35 @@
+.programCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  &__link {
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+    &:hover .h6 {
+      text-decoration-color: var(--color-black);
+    }
+    .h6 {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: 0.3s;
+    }
+  }
+  &__img {
+    width: 100%;
+    aspect-ratio: 286/216;
+    position: relative;
+    margin-bottom: 12px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .badge-sm {
+      bottom: 16px;
+      left: 16px;
+      position: absolute;
+    }
+  }
+}

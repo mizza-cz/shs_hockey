@@ -1,0 +1,372 @@
+{% extends "@components/base/base.twig" %} {% set title = "09.0_eshop-programs"
+%} {% block main %}
+
+<section class="eshop-section pt-xl-16 pt-12 mb-xxl-30 mb-lg-20 mb-15">
+  <div class="container">
+    <div class="d-flex justify-content-between gap-6 mb-8 flex-wrap">
+      <h1 class="h2 text-center">E-shop</h1>
+      <ul class="eshop-menu">
+        <li>
+          <a class="eshop-menu__link" href="#">Zboží</a>
+        </li>
+        <li>
+          <a class="eshop-menu__link active" href="#">Tréninkové programy</a>
+        </li>
+        <li>
+          <a class="eshop-menu__link" href="#">Utkání a turnaje</a>
+        </li>
+      </ul>
+      <button class="button-primary">
+        {% include "@images/cart.svg" %} 4 597 Kč
+      </button>
+    </div>
+    <div class="row gx-6 gy-lg-8 gy-6">
+      <div class="col-lg-3 col-sm-6">
+        <div class="programCard">
+          <div class="programCard-content">
+            <a href="#" class="programCard__link">
+              <div class="programCard__img">
+                <img
+                  src="images/content/program-1.png"
+                  loading="lazy"
+                  alt="program"
+                />
+                <div class="badge-sm bg-gray-500">Utkání</div>
+              </div>
+              <div class="h6">2017 Select Hockey Game Camp</div>
+            </a>
+            <div class="text-sm text-gray-500 mb-1">
+              09.10.2025, ZS Světlá nad Sázavou
+            </div>
+          </div>
+
+          <div class="programCard-bottom">
+            <div class="text-sm text-primary fw-bold mb-3">500 Kč</div>
+            <div class="d-flex flex-wrap align-items-center gap-4">
+              <a href="#" class="button-secondary button-sm flex-fill"
+                >Více informací</a
+              >
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#modalOrder"
+                class="button-primary button-sm flex-fill"
+              >
+                {% include "@images/cart.svg" %} Do košíku
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="programCard">
+          <div class="programCard-content">
+            <a href="#" class="programCard__link">
+              <div class="programCard__img">
+                <img
+                  src="images/content/program-2.png"
+                  loading="lazy"
+                  alt="program"
+                />
+                <div class="badge-sm bg-primary">Programy</div>
+              </div>
+              <div class="h6">SHS Defenders & forwards training camp</div>
+            </a>
+            <div class="text-sm text-gray-500 mb-1">
+              09.10.2025, ZS Chotěboř
+            </div>
+          </div>
+
+          <div class="programCard-bottom">
+            <div class="text-sm text-primary fw-bold mb-3">2 800 Kč</div>
+            <div class="d-flex flex-wrap align-items-center gap-4">
+              <a href="#" class="button-secondary button-sm flex-fill"
+                >Více informací</a
+              >
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#modalOrder"
+                class="button-primary button-sm flex-fill"
+              >
+                {% include "@images/cart.svg" %} Do košíku
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="programCard">
+          <div class="programCard-content">
+            <a href="#" class="programCard__link">
+              <div class="programCard__img">
+                <img
+                  src="images/content/program-3.png"
+                  loading="lazy"
+                  alt="program"
+                />
+                <div class="badge-sm bg-primary">Programy</div>
+              </div>
+              <div class="h6">SHS Skills Hockey training practice</div>
+            </a>
+            <div class="text-sm text-gray-500 mb-1">
+              09.10.2025, ZS Pezinok (Slovensko)
+            </div>
+          </div>
+
+          <div class="programCard-bottom">
+            <div class="text-sm text-primary fw-bold mb-3">500 Kč</div>
+            <div class="d-flex flex-wrap align-items-center gap-4">
+              <a href="#" class="button-secondary button-sm flex-fill"
+                >Více informací</a
+              >
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#modalOrder"
+                class="button-primary button-sm flex-fill"
+              >
+                {% include "@images/cart.svg" %} Do košíku
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="programCard">
+          <div class="programCard-content">
+            <a href="#" class="programCard__link">
+              <div class="programCard__img">
+                <img
+                  src="images/content/program-1.png"
+                  loading="lazy"
+                  alt="program"
+                />
+                <div class="badge-sm bg-gray-500">Turnaje</div>
+              </div>
+              <div class="h6">SHS 2013 Premier Select League</div>
+            </a>
+            <div class="text-sm text-gray-500 mb-1">
+              09.10.2025, MG Aréna / Trenčín
+            </div>
+          </div>
+
+          <div class="programCard-bottom">
+            <div class="text-sm text-primary fw-bold mb-3">1 300 Kč</div>
+            <div class="d-flex flex-wrap align-items-center gap-4">
+              <a href="#" class="button-secondary button-sm flex-fill"
+                >Více informací</a
+              >
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#modalOrder"
+                class="button-primary button-sm flex-fill"
+              >
+                {% include "@images/cart.svg" %} Do košíku
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="programCard">
+          <div class="programCard-content">
+            <a href="#" class="programCard__link">
+              <div class="programCard__img">
+                <img
+                  src="images/content/program-1.png"
+                  loading="lazy"
+                  alt="program"
+                />
+                <div class="badge-sm bg-gray-500">Utkání</div>
+              </div>
+              <div class="h6">2017 Select Hockey Game Camp</div>
+            </a>
+            <div class="text-sm text-gray-500 mb-1">
+              09.10.2025, ZS Světlá nad Sázavou
+            </div>
+          </div>
+
+          <div class="programCard-bottom">
+            <div class="text-sm text-primary fw-bold mb-3">500 Kč</div>
+            <div class="d-flex flex-wrap align-items-center gap-4">
+              <a href="#" class="button-secondary button-sm flex-fill"
+                >Více informací</a
+              >
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#modalOrder"
+                class="button-primary button-sm flex-fill"
+              >
+                {% include "@images/cart.svg" %} Do košíku
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="programCard">
+          <div class="programCard-content">
+            <a href="#" class="programCard__link">
+              <div class="programCard__img">
+                <img
+                  src="images/content/program-2.png"
+                  loading="lazy"
+                  alt="program"
+                />
+                <div class="badge-sm bg-primary">Programy</div>
+              </div>
+              <div class="h6">SHS Defenders & forwards training camp</div>
+            </a>
+            <div class="text-sm text-gray-500 mb-1">
+              09.10.2025, ZS Chotěboř
+            </div>
+          </div>
+
+          <div class="programCard-bottom">
+            <div class="text-sm text-primary fw-bold mb-3">2 800 Kč</div>
+            <div class="d-flex flex-wrap align-items-center gap-4">
+              <a href="#" class="button-secondary button-sm flex-fill"
+                >Více informací</a
+              >
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#modalOrder"
+                class="button-primary button-sm flex-fill"
+              >
+                {% include "@images/cart.svg" %} Do košíku
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="programCard">
+          <div class="programCard-content">
+            <a href="#" class="programCard__link">
+              <div class="programCard__img">
+                <img
+                  src="images/content/program-3.png"
+                  loading="lazy"
+                  alt="program"
+                />
+                <div class="badge-sm bg-primary">Programy</div>
+              </div>
+              <div class="h6">SHS Skills Hockey training practice</div>
+            </a>
+            <div class="text-sm text-gray-500 mb-1">
+              09.10.2025, ZS Pezinok (Slovensko)
+            </div>
+          </div>
+
+          <div class="programCard-bottom">
+            <div class="text-sm text-primary fw-bold mb-3">500 Kč</div>
+            <div class="d-flex flex-wrap align-items-center gap-4">
+              <a href="#" class="button-secondary button-sm flex-fill"
+                >Více informací</a
+              >
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#modalOrder"
+                class="button-primary button-sm flex-fill"
+              >
+                {% include "@images/cart.svg" %} Do košíku
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="programCard">
+          <div class="programCard-content">
+            <a href="#" class="programCard__link">
+              <div class="programCard__img">
+                <img
+                  src="images/content/program-1.png"
+                  loading="lazy"
+                  alt="program"
+                />
+                <div class="badge-sm bg-gray-500">Turnaje</div>
+              </div>
+              <div class="h6">SHS 2013 Premier Select League</div>
+            </a>
+            <div class="text-sm text-gray-500 mb-1">
+              09.10.2025, MG Aréna / Trenčín
+            </div>
+          </div>
+
+          <div class="programCard-bottom">
+            <div class="text-sm text-primary fw-bold mb-3">1 300 Kč</div>
+            <div class="d-flex flex-wrap align-items-center gap-4">
+              <a href="#" class="button-secondary button-sm flex-fill"
+                >Více informací</a
+              >
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#modalOrder"
+                class="button-primary button-sm flex-fill"
+              >
+                {% include "@images/cart.svg" %} Do košíku
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav
+      class="border-top-1 mt-8 pt-5 d-flex justify-content-sm-between justify-content-center align-items-center gap-4 flex-wrap"
+      aria-label="Pagination"
+    >
+      <a class="pagination-prev" href="/page/2" rel="prev">
+        <img
+          src="images/ico/arrow-right.svg"
+          width="20"
+          height="20"
+          alt=""
+          aria-hidden="true"
+        />
+        Předchozí
+      </a>
+
+      <ul class="pagination mb-0">
+        <li class="page-item">
+          <a class="page-link" href="/page/1">1</a>
+        </li>
+
+        <li class="page-item">
+          <a class="page-link" href="/page/2">2</a>
+        </li>
+
+        <li class="page-item active">
+          <span class="page-link" aria-current="page"> 3 </span>
+        </li>
+
+        <li class="page-item disabled">
+          <span class="page-link" aria-hidden="true">…</span>
+        </li>
+
+        <li class="page-item">
+          <a class="page-link" href="/page/8">8</a>
+        </li>
+
+        <li class="page-item">
+          <a class="page-link" href="/page/9">9</a>
+        </li>
+
+        <li class="page-item">
+          <a class="page-link" href="/page/10">10</a>
+        </li>
+      </ul>
+
+      <a class="pagination-next" href="/page/4" rel="next">
+        Další
+        <img
+          src="images/ico/arrow-right.svg"
+          width="20"
+          height="20"
+          alt=""
+          aria-hidden="true"
+        />
+      </a>
+    </nav>
+  </div>
+</section>
+{% include "@components/modal/modalOrder.twig" %} {% endblock %}
