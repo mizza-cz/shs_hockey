@@ -274,7 +274,7 @@
         $select.select2({
           width: "100%",
           minimumResultsForSearch: Infinity,
-          dropdownParent: window.jQuery(modalOrder),
+          dropdownParent: $select.parent(),
         });
       });
     }
