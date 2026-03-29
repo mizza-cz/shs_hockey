@@ -1,0 +1,14 @@
+.tooltip {
+  padding-bottom: 4px;
+  overflow: visible;
+  --bs-tooltip-bg: var(--color-gray-900) !important;
+  --bs-tooltip-color: var(--color-white) !important;
+  --bs-tooltip-border-radius: 4px !important;
+  --bs-tooltip-font-size: 12px !important;
+  --bs-tooltip-arrow-width: 0.8rem !important;
+  --bs-tooltip-arrow-height: 0.4rem !important;
+  --bs-tooltip-arrow-color: var(--color-gray-900) !important;
+  --bs-tooltip-padding-y: 8px !important;
+  --bs-tooltip-padding-x: 8px !important;
+  --bs-tooltip-margin: 0 !important;
+}

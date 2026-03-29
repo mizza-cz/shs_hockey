@@ -1,0 +1,283 @@
+{% extends "@components/base/base.twig" %} {% set title =
+"11.0_shopping-cart-contents" %} {% block main %}
+
+<section class="shoppingCart-section pt-8 mb-xxl-30 mb-lg-20 mb-15">
+  <div class="container">
+    <div class="d-flex justify-content-between gap-6 mb-8 flex-wrap">
+      <h1 class="h2 text-center">E-shop</h1>
+      <ul class="eshop-menu">
+        <li>
+          <a class="eshop-menu__link" href="#">Zboží</a>
+        </li>
+        <li>
+          <a class="eshop-menu__link" href="#">Tréninkové programy</a>
+        </li>
+        <li>
+          <a class="eshop-menu__link" href="#">Utkání a turnaje</a>
+        </li>
+      </ul>
+      <a href="#" class="button-primary">
+        {% include "@images/cart.svg" %} 4 597 Kč
+      </a>
+    </div>
+    <h2 class="h5 mb-3">Obsah nákupního košíku</h2>
+    <div class="shoppingCart-row">
+      <div class="shoppingCart-items">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th class="d-none d-lg-table-cell"></th>
+                <th class="text-start">Název</th>
+                <th class="text-center">Ks / Cena za ks</th>
+                <th class="text-end">Celkem</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="cartItem">
+                <td class="cartImg">
+                  <img
+                    src="images/content/program-4.png"
+                    loading="lazy"
+                    alt="SHS 2013 Premier Select League"
+                  />
+                </td>
+                <td class="text-start">
+                  <div class="fw-bold text-sm">
+                    SHS 2013 Premier Select League (14.5.2025)
+                  </div>
+                  <ol class="ps-3 list-numbered text-xs">
+                    <li>Jakub Novák, HC Sparta Praha, 22.3.2021, Brankář</li>
+                    <li>Petr Svoboda, BK Mladá Boleslav, 5.7.2021, Obránce</li>
+                    <li>Martin Černý, HC Kometa Brno, 10.1.2022, Útočník</li>
+                  </ol>
+                </td>
+                <td class="text-xs text-center text-nowrap">3 x 1 300 Kč</td>
+                <td class="text-sm fw-bold text-end text-nowrap">3 900 Kč</td>
+                <td class="pe-0">
+                  <button
+                    class="cartRemove"
+                    type="button"
+                    aria-label="Odstranit položku"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M3 6h18"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M8 6V4h8v2"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M19 6l-1 13a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10 11v6M14 11v6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr class="cartItem">
+                <td class="cartImg">
+                  <img
+                    src="images/content/product-1.png"
+                    loading="lazy"
+                    alt="SHS 2013 Premier Select League"
+                  />
+                </td>
+                <td class="text-start">
+                  <div class="fw-bold text-sm">
+                    Bílý zápasový dres SHS selection
+                  </div>
+                </td>
+                <td class="text-xs text-center text-nowrap">3 x 1 000 Kč</td>
+                <td class="text-sm fw-bold text-end text-nowrap">3 000 Kč</td>
+                <td class="pe-0">
+                  <button
+                    class="cartRemove"
+                    type="button"
+                    aria-label="Odstranit položku"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M3 6h18"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M8 6V4h8v2"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M19 6l-1 13a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10 11v6M14 11v6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr class="cartItem">
+                <td class="cartImg">
+                  <img
+                    src="images/content/program-1.png"
+                    loading="lazy"
+                    alt="SHS 2013 Premier Select League"
+                  />
+                </td>
+                <td class="text-start">
+                  <div class="fw-bold text-sm">
+                    SHS 2013 Premier Select League
+                  </div>
+                  <ol class="ps-3 list-numbered text-xs">
+                    <li>Martin Černý, HC Kometa Brno, 10.1.2023, Útočník</li>
+                  </ol>
+                </td>
+                <td class="text-xs text-center text-nowrap">2 x 1 200 Kč</td>
+                <td class="text-sm fw-bold text-end text-nowrap">2 400 Kč</td>
+                <td class="pe-0">
+                  <button
+                    class="cartRemove"
+                    type="button"
+                    aria-label="Odstranit položku"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M3 6h18"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M8 6V4h8v2"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M19 6l-1 13a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10 11v6M14 11v6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr class="cartItem">
+                <td class="cartImg">
+                  <img
+                    src="images/content/product-6.png"
+                    loading="lazy"
+                    alt="SHS 2013 Premier Select League"
+                  />
+                </td>
+                <td class="text-start">
+                  <div class="fw-bold text-sm">Černá čepice SHS</div>
+                  <ol class="ps-3 list-numbered text-xs">
+                    <li>Jakub Novák, HC Sparta Praha, 22.3.2021, Brankář</li>
+                    <li>Petr Svoboda, BK Mladá Boleslav, 5.7.2021, Obránce</li>
+                    <li>Martin Černý, HC Kometa Brno, 10.1.2022, Útočník</li>
+                  </ol>
+                </td>
+                <td class="text-xs text-center text-nowrap">1 x 1 123 Kč</td>
+                <td class="text-sm fw-bold text-end text-nowrap">1 123 Kč</td>
+                <td class="pe-0">
+                  <button
+                    class="cartRemove"
+                    type="button"
+                    aria-label="Odstranit položku"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M3 6h18"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M8 6V4h8v2"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M19 6l-1 13a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10 11v6M14 11v6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <aside class="shoppingCartAside">
+        <div class="p-6 border-1">
+          <h5 class="h5 mb-4">Shrnutí</h5>
+          <div
+            class="d-flex justify-content-between align-items-center gap-2 text-sm fw-bold mb-1"
+          >
+            <span>Zboží</span>
+            <span>2 384 Kč</span>
+          </div>
+          <div
+            class="d-flex justify-content-between align-items-center gap-2 text-sm fw-bold mb-1"
+          >
+            <span>Akce</span>
+            <span>5 384 Kč</span>
+          </div>
+          <div
+            class="d-flex justify-content-between align-items-center gap-2 text-md pt-4 mt-4 border-top-1 fw-semibold"
+          >
+            <span>Celkem</span>
+            <span>8 384 Kč</span>
+          </div>
+        </div>
+        <button class="button-lg button-primary w-100 mt-5">
+          Pokračovat na kontaktní údaje {% include "@images/chevron-right.svg"
+          %}
+        </button>
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock %}

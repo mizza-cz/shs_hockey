@@ -1,0 +1,148 @@
+{% extends "@components/base/base.twig" %} {% set title =
+"12.0_shopping-cart-form" %} {% block main %}
+
+<section class="shoppingCart-section pt-8 mb-xxl-30 mb-lg-20 mb-15">
+  <div class="container">
+    <div class="d-flex justify-content-between gap-6 mb-8 flex-wrap">
+      <h1 class="h2 text-center">E-shop</h1>
+      <ul class="eshop-menu">
+        <li>
+          <a class="eshop-menu__link" href="#">Zboží</a>
+        </li>
+        <li>
+          <a class="eshop-menu__link" href="#">Tréninkové programy</a>
+        </li>
+        <li>
+          <a class="eshop-menu__link" href="#">Utkání a turnaje</a>
+        </li>
+      </ul>
+      <a href="#" class="button-primary">
+        {% include "@images/cart.svg" %} 4 597 Kč
+      </a>
+    </div>
+    <div class="shoppingCart-row">
+      <div class="shoppingCart-form">
+        <h2 class="h5 mb-6">Údaje o kupujícím</h2>
+        <form>
+          <div class="mb-5">
+            <label for="lastName" class="form-label">
+              Příjmení <span class="required">*</span>
+            </label>
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              class="form-control"
+              placeholder="Vyplňte"
+              required
+            />
+          </div>
+          <div class="mb-5">
+            <label for="firstName" class="form-label">
+              Jméno <span class="required">*</span>
+            </label>
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              class="form-control"
+              placeholder="Vyplňte"
+              required
+            />
+          </div>
+
+          <div class="mb-5">
+            <label for="email" class="form-label">
+              Telefon <span class="required">*</span>
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              class="form-control"
+              placeholder="Vyplňte"
+              required
+            />
+          </div>
+          <div class="mb-5">
+            <label for="email" class="form-label">
+              E-mail <span class="required">*</span>
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="form-control"
+              placeholder="Vyplňte"
+              required
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              for="orderNote"
+              class="form-label d-flex align-items-center gap-1"
+            >
+              Poznámka k objednávce
+              <div
+                class="orderHelpTooltip"
+                data-bs-toggle="tooltip"
+                data-bs-html="true"
+                title="Poznámka k objednávce"
+              >
+                {% include "@images/help-circle.svg" %}
+              </div>
+            </label>
+            <textarea
+              id="orderNote"
+              name="orderNote"
+              class="form-control"
+              placeholder="Vyplňte"
+            ></textarea>
+          </div>
+          <div class="form-check mb-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="agreement"
+              name="agreement"
+            />
+            <label class="fw-medium text-sm text-gray-700" for="agreement">
+              Souhlas se zpracováním <a href="#">osobních údajů</a>
+            </label>
+          </div>
+
+          <button type="submit" class="button-primary button-lg w-100">
+            Objednat
+          </button>
+        </form>
+      </div>
+      <aside class="shoppingCartAside">
+        <div class="p-6 border-1">
+          <h5 class="h5 mb-4">Shrnutí</h5>
+          <div
+            class="d-flex justify-content-between align-items-center gap-2 text-sm fw-bold mb-1"
+          >
+            <span>Zboží</span>
+            <span>2 384 Kč</span>
+          </div>
+          <div
+            class="d-flex justify-content-between align-items-center gap-2 text-sm fw-bold mb-1"
+          >
+            <span>Akce</span>
+            <span>5 384 Kč</span>
+          </div>
+          <div
+            class="d-flex justify-content-between align-items-center gap-2 text-md pt-4 mt-4 border-top-1 fw-semibold"
+          >
+            <span>Celkem</span>
+            <span>8 384 Kč</span>
+          </div>
+        </div>
+        <a href="#" class="button-lg button-secondary w-100 mt-5">
+          {% include "@images/chevron-down.svg" %} Zpět do košíku
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock %}

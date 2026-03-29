@@ -1,0 +1,33 @@
+.shoppingCart {
+  &-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 364px;
+    gap: 24px;
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: 1fr;
+      margin: 0 auto;
+    }
+  }
+  &-form {
+    max-width: 412px;
+    width: 100%;
+    @include media-breakpoint-down(lg) {
+      margin: 0 auto;
+    }
+  }
+}
+.shoppingCartAside {
+  @include media-breakpoint-down(lg) {
+    max-width: 412px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .button-primary {
+    svg path {
+      stroke: var(--color-brand-300);
+    }
+  }
+  .button-secondary svg {
+    transform: rotate(90deg);
+  }
+}

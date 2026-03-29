@@ -75,7 +75,15 @@
     border: 1px solid var(--color-primary);
   }
 }
-
+textarea.form-control {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 100%;
+  min-height: 114px;
+  height: 114px;
+  max-height: 320px;
+  resize: vertical;
+}
 .form-check-input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
