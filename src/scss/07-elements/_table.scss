@@ -15,6 +15,18 @@ th {
   border-bottom: 1px solid var(--color-gray-200);
 }
 .shoppingCart-items table {
+  thead {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+  .cartItem {
+    @include media-breakpoint-down(md) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
   .cartImg {
     padding-left: 0 !important;
     width: 78px;
