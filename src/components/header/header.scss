@@ -7,8 +7,7 @@
     display: block;
     transition: transform 0.25s ease;
     @include media-breakpoint-up(xl) {
-      width: 132px;
-      height: 119px;
+      width: 150px;
     }
     @include media-breakpoint-up(lg) {
       width: 110px;

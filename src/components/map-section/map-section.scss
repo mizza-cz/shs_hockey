@@ -1,12 +1,29 @@
-.map-section__img {
+.map-section__box {
   max-width: 940px;
   width: 100%;
   aspect-ratio: 883/505;
   margin: 0 auto 40px;
-  img {
+  position: relative;
+  svg {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    
+  }
+}
+
+.map-section__decore {
+  width: 299px;
+  aspect-ratio: 299/247;
+  position: absolute;
+  bottom: 7rem;
+  left: -1rem;
+}
+
+.mapLink {
+  display: block;
+  path {
+    transition: all 0.25s;
+  }
+  &:hover path {
+    stroke: var(--color-brand-700);
   }
 }

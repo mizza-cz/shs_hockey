@@ -189,14 +189,15 @@ block main %} {% include "@components/hero-section/hero-section.twig" %}
     {% include "@components/playersSlider/playersSlider.twig" %}
   </div>
 </div>
-<div class="mb-lg-16 mb-10">
-  {% include "@components/gallerySwiper/gallerySwiper.twig" %}
-</div>
+
 <div class="mb-xxl-30 mb-lg-20 mb-15">
   <div class="container">
     {% include "@components/videoFrame/videoFrame.twig" %}
   </div>
 </div>
 
-{% include "@components/map-section/map-section.twig" %} {% include
-"@components/footer-projects/footer-projects.twig" %} {% endblock %}
+{% include "@components/map-section/map-section.twig" %}  
+<div class="my-lg-16 my-10">
+  {% include "@components/gallerySwiper/gallerySwiper.twig" %}
+</div>
+{% include "@components/footer-projects/footer-projects.twig" %} {% endblock %}
