@@ -11,11 +11,21 @@
 }
 
 .map-section__decore {
-  width: 299px;
-  aspect-ratio: 299/247;
+  // width: 299px;
+  // aspect-ratio: 299/247;
+  // position: absolute;
+  // bottom: 7rem;
+  // left: -1rem;
+  width: clamp(160px, 20vw, 299px);
+  aspect-ratio: 299 / 247;
   position: absolute;
   bottom: 7rem;
   left: -1rem;
+  @include media-breakpoint-down(sm) {
+    bottom: 2rem;
+    width: 100px;
+    left: 0;
+  }
 }
 
 .mapLink {
