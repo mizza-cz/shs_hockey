@@ -3,7 +3,7 @@ if (gallerySwiper) {
   new Swiper(".gallerySwiper", {
     spaceBetween: 4,
     speed: 1000,
-    loop: true,
+    loop: false,
     slidesPerView: "auto",
     breakpoints: {
       0: {
