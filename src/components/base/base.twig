@@ -51,7 +51,10 @@
   </head>
   <body>
     <div class="base">
-      {% include "@components/header/header.twig" %}
+      {% set headerVariant = headerVariant|default('default') %} {% if
+      headerVariant == 'cart' %} {% include
+      "@components/header/header-cart.twig" %} {% else %} {%
+      include "@components/header/header.twig" %} {% endif %}
       <main class="main" aria-label="Hlavní obsah">
         {% block main %}{% endblock %}
       </main>
