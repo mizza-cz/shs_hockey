@@ -1,8 +1,6 @@
 .playersSlider {
   position: relative;
-  overflow: visible;
   .swiper-slide {
-    width: 340px !important;
     display: flex !important;
     height: auto !important;
     @include media-breakpoint-down(sm) {
@@ -54,7 +52,7 @@
     }
   }
   &__btn.prev {
-    left: -24px;
+    left: -20px;
     @include media-breakpoint-down(xl) {
       left: -10px;
     }
@@ -63,7 +61,10 @@
     }
   }
   &__btn.next {
-    right: -10px;
+    right: -20px;
+    @include media-breakpoint-down(xl) {
+      right: -10px;
+    }
   }
   &__btn.swiper-button-disabled {
     opacity: 0;

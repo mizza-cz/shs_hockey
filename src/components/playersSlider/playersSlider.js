@@ -1,20 +1,26 @@
-const playersSlider = document.querySelector(".playersSlider");
+const playersSlider = document.querySelector(".playersSlider__inner");
+
 if (playersSlider) {
-  new Swiper(".playersSlider", {
+  new Swiper(playersSlider, {
     spaceBetween: 24,
     speed: 1000,
 
-    slidesPerView: "auto",
+    slidesPerView: 1,
+
     navigation: {
       nextEl: ".playersSlider__btn.next",
       prevEl: ".playersSlider__btn.prev",
     },
+
     breakpoints: {
-      0: {
-        slidesPerView: 1,
+      541: {
+        slidesPerView: 2,
       },
-      480: {
-        slidesPerView: "auto",
+      768: {
+        slidesPerView: 3,
+      },
+      1100: {
+        slidesPerView: 4,
       },
     },
   });
