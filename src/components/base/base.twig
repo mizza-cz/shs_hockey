@@ -51,10 +51,40 @@
   </head>
   <body>
     <div class="base">
+      <div
+        id="popup"
+        class="popup"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Oznámení"
+        tabindex="-1"
+      >
+        <div class="popup__body">
+          <a
+            href="#"
+            class="popup__link"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="images/content/videoFrame.jpg"
+              alt=""
+              class="popup__image"
+            />
+          </a>
+          <button
+            type="button"
+            class="popup__close button-primary"
+            aria-label="Zavřít"
+          >
+            Zavřít
+          </button>
+        </div>
+      </div>
       {% set headerVariant = headerVariant|default('default') %} {% if
       headerVariant == 'cart' %} {% include
-      "@components/header/header-cart.twig" %} {% else %} {%
-      include "@components/header/header.twig" %} {% endif %}
+      "@components/header/header-cart.twig" %} {% else %} {% include
+      "@components/header/header.twig" %} {% endif %}
       <main class="main" aria-label="Hlavní obsah">
         {% block main %}{% endblock %}
       </main>
