@@ -65,6 +65,7 @@
   border: 0;
   border-radius: 0;
   box-shadow: 0 0.0625rem 0.125rem 0 rgba(10, 13, 18, 0.0509803922);
+  z-index: 99999;
 }
 .select2-results__options {
   font-size: 12px;
